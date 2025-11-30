@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* 1. הגדרות בסיס וצבעים (פלטת חול-לבנדר-זהב) */
+        /* 1. הגדרות בסיס וצבעים (פלטת לבנדר, חול וזהב) */
         :root {
-            --color-primary-bg: #F5F5DC; /* חום חול בהיר (רקע כללי) */
-            --color-secondary-bg: #C7BCA1; /* חום אבן/בז' כהה (רקע בלוקים) */
-            --color-text-dark: #354F52; /* נשאר כהה לקריאות טובה */
-            --color-accent-soft: #A8A3D8; /* סגול לבנדר רך (הדגשה קלה) */
-            --color-accent-deep: #846B3C; /* זהב מט/חום עמוק (כותרות, CTA) */
+            --color-primary-bg: #A8A3D8; /* סגול לבנדר רך - רקע כללי לבקשתך */
+            --color-secondary-bg: #F5F5DC; /* חום חול בהיר - רקע לבלוקים ותוכן */
+            --color-text-dark: #354F52; /* כהה לקריאות טובה */
+            --color-accent-soft: #C7BCA1; /* חום אבן/בז' כהה - הדגשה קלה/כותרות משנה */
+            --color-accent-deep: #846B3C; /* זהב מט/חום עמוק - כותרות, CTA, הדגשת טאב פעיל */
         }
         
         * {
@@ -23,7 +23,7 @@
         }
         
         body {
-            background-color: var(--color-primary-bg);
+            background-color: var(--color-primary-bg); /* סגול לבנדר רך */
             color: var(--color-text-dark);
             font-family: 'Heebo', sans-serif;
             line-height: 1.6;
@@ -31,26 +31,28 @@
             text-align: right; 
         }
         
-        /* 2. כותרות וראש עמוד (Header) */
+        /* 2. כותרות וראש עמוד (Header) - רקע תמונה */
         header {
             text-align: center;
             padding: 40px 0 20px 0;
             margin-bottom: 20px;
-            background-color: var(--color-secondary-bg); /* רקע חום אבן */
+            
+            /* הגדרות רקע התמונה החדשות */
+            background-image: url('images/background.jpg'); /* נתיב התמונה החדש */
+            background-size: cover;
+            background-position: center;
+            background-color: #A8A3D899; /* צבע לבנדר עם שקיפות למקרה שהתמונה לא נטענת */
+            
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            color: white; /* שינוי צבע הטקסט ללבן לניגודיות על רקע כהה/תמונה */
         }
         
         header h1 {
             font-size: 3.5rem; 
-            color: var(--color-accent-deep); /* שימוש בזהב מט לכותרת הראשית */
-            margin-bottom: 5px;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            color: var(--color-text-dark); /* טקסט כהה מתחת לכותרת */
-            font-weight: 300;
+            color: white; /* שינוי ללבן */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* צל קל לשיפור הקריאות */
+            margin-bottom: 0; 
         }
         
         /* עיצוב תמונת הפרופיל */
@@ -63,15 +65,32 @@
             height: 150px;
             object-fit: cover;
             border-radius: 50%; 
-            border: 5px solid var(--color-accent-soft); /* מסגרת לבנדר עדינה */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 5px solid white; /* מסגרת לבנה בולטת */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* 3. מערכת הלשוניות (Tabs) - תמונות */
+        /* 3. תיבת תוכן כללי קבועה (General Content) */
+        .general-intro-box {
+            max-width: 900px;
+            margin: 0 auto 30px auto; 
+            padding: 30px;
+            background-color: var(--color-secondary-bg); /* חום חול בהיר */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center; 
+        }
+
+        .general-intro-box h2 {
+            color: var(--color-accent-deep); /* זהב מט */
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        /* 4. מערכת הלשוניות (Tabs) - תמונות */
         .tabs-container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: var(--color-secondary-bg); /* רקע חום אבן */
+            background-color: var(--color-secondary-bg); /* רקע חול בהיר */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -83,7 +102,7 @@
             flex-wrap: wrap; 
             padding: 10px;
             gap: 10px; 
-            background-color: var(--color-primary-bg); /* רקע חול בהיר לשורת הטאבים */
+            background-color: var(--color-accent-soft); /* רקע חום אבן לבר הטאבים */
         }
         
         .tab-link {
@@ -98,14 +117,10 @@
             padding: 5px;
         }
         
-        .tab-link:hover {
-            opacity: 0.85; 
-        }
-        
         .tab-link.active {
-            box-shadow: 0 0 0 3px var(--color-accent-soft); /* מסגרת לבנדר לטאב הפעיל */
+            box-shadow: 0 0 0 3px var(--color-accent-deep); /* מסגרת זהב מט לטאב הפעיל */
             border-radius: 8px;
-            background-color: var(--color-secondary-bg); /* רקע חום אבן לטאב הפעיל */
+            background-color: var(--color-secondary-bg); /* רקע חול בהיר לטאב הפעיל */
         }
         
         .tab-image {
@@ -117,7 +132,7 @@
         }
         
         .tab-link.active .tab-image {
-            border: 3px solid var(--color-accent-deep); /* הדגשת המסגרת בזהב מט */
+            border: 3px solid var(--color-accent-deep); 
         }
         
         .tab-label {
@@ -131,31 +146,25 @@
             color: var(--color-accent-deep); /* הדגשת הטקסט בזהב מט */
         }
 
-        /* 4. תוכן הלשונית */
+        /* 5. תוכן הלשונית (נפתח רק בלחיצה) */
         .tab-content {
             padding: 30px;
             border-top: none;
-            background-color: var(--color-secondary-bg); /* רקע חום אבן */
+            background-color: var(--color-secondary-bg); /* רקע חול בהיר */
         }
         
         .tab-content h2 {
-            color: var(--color-accent-soft); /* כותרות תוכן בלבנדר */
+            color: var(--color-accent-deep); 
             margin-bottom: 15px;
-            border-bottom: 2px solid rgba(168, 163, 216, 0.5); /* קו לבנדר שקוף */
+            border-bottom: 2px solid rgba(132, 107, 60, 0.3); 
             padding-bottom: 10px;
         }
-
-        .tab-content ul {
-            list-style-type: '🎵 ';
-            margin-right: 20px;
-            margin-top: 10px;
-        }
         
-        /* 5. כפתור קריאה לפעולה (CTA) */
+        /* 6. כפתור קריאה לפעולה (CTA) */
         .cta-button {
             display: inline-block;
-            background-color: var(--color-accent-deep); /* זהב מט כצבע ראשי לכפתור */
-            color: white; /* טקסט לבן לניגודיות */
+            background-color: var(--color-accent-deep); 
+            color: white; 
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
@@ -165,18 +174,9 @@
         }
         
         .cta-button:hover {
-            background-color: var(--color-accent-soft); /* לבנדר במעבר עכבר */
+            background-color: var(--color-accent-soft); /* חום אבן במעבר עכבר */
         }
 
-        /* 6. כותרת תחתונה (Footer) */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 15px 0;
-            font-size: 0.9rem;
-            color: var(--color-text-dark);
-        }
-        
         /* 7. רספונסיביות לנייד */
         @media (max-width: 600px) {
             .tabs-image-bar {
@@ -189,9 +189,6 @@
                 width: 60px;
                 height: 60px;
             }
-            .tab-label {
-                font-size: 0.7rem;
-            }
         }
     </style>
 </head>
@@ -200,63 +197,65 @@
 
     <header>
         <div class="profile-image-container">
-            <img src="profile-image.jpg" alt="תמונת פרופיל של שירי אלקבץ" class="profile-image">
+            <img src="images/profile.jpg" alt="תמונת פרופיל של שירי אלקבץ" class="profile-image">
         </div>
         
-        <h1>שירי אלקבץ</h1> <p class="subtitle">🎶 סטודיו צלילים מחברים 🎵</p>
+        <h1>שירי אלקבץ</h1> 
     </header>
+
+    <div class="general-intro-box">
+        <h2>🎶 סטודיו צלילים מחברים 🎵</h2>
+        <p>ברוכים הבאים לסטודיו של שירי אלקבץ! אנו מאמינים בכוח הטרנספורמטיבי של המוזיקה והצליל כמקור לריפוי, יצירתיות וחיבור פנימי. כאן תוכלו למצוא את כל המידע על השירותים השונים שאני מציעה.</p>
+        <a href="#Contact" class="cta-button">לתיאום פגישת הכרות</a>
+    </div>
 
     <div class="tabs-container">
         
         <div class="tabs-image-bar">
-            <a href="#" class="tab-link active" onclick="openTab(event, 'Studio')">
-                <img src="tab-studio.jpg" alt="סטודיו צלילים מחברים" class="tab-image">
+            <a href="#" class="tab-link" onclick="openTab(event, 'Studio')">
+                <img src="images/studio.jpg" alt="סטודיו צלילים מחברים" class="tab-image">
                 <span class="tab-label">סטודיו צלילים מחברים</span>
             </a>
             <a href="#" class="tab-link" onclick="openTab(event, 'Performances')">
-                <img src="tab-performances.jpg" alt="הופעות" class="tab-image">
+                <img src="images/concerts.jpg" alt="הופעות" class="tab-image">
                 <span class="tab-label">הופעות</span>
             </a>
             <a href="#" class="tab-link" onclick="openTab(event, 'Workshops')">
-                <img src="tab-workshops.jpg" alt="סדנאות" class="tab-image">
+                <img src="images/sadna.jpg" alt="סדנאות" class="tab-image">
                 <span class="tab-label">סדנאות</span>
             </a>
             <a href="#" class="tab-link" onclick="openTab(event, 'Groups')">
-                <img src="tab-groups.jpg" alt="קבוצות" class="tab-image">
+                <img src="images/groups.jpg" alt="קבוצות" class="tab-image">
                 <span class="tab-label">קבוצות</span>
             </a>
             <a href="#" class="tab-link" onclick="openTab(event, 'Therapy')">
-                <img src="tab-therapy.jpg" alt="תרפיה במוזיקה" class="tab-image">
+                <img src="images/teraphy.jpg" alt="תרפיה במוזיקה" class="tab-image">
                 <span class="tab-label">תרפיה במוזיקה</span>
             </a>
             <a href="#" class="tab-link" onclick="openTab(event, 'BodyVoice')">
-                <img src="tab-body-voice.jpg" alt="קול הגוף" class="tab-image">
+                <img src="images/kol_haguf.jpg" alt="קול הגוף" class="tab-image">
                 <span class="tab-label">קול הגוף</span>
             </a>
             <a href="#" class="tab-link" onclick="openTab(event, 'Music')">
-                <img src="tab-music.jpg" alt="מוזיקה" class="tab-image">
+                <img src="images/music.jpg" alt="מוזיקה" class="tab-image">
                 <span class="tab-label">מוזיקה</span>
             </a>
         </div>
 
-        <div id="Studio" class="tab-content">
-            <h2>סטודיו צלילים מחברים</h2>
-            <p><strong>[כאן מלא את הטקסט על הסטודיו והחזון הכללי.]</strong></p>
-            <p>ברוכים הבאים לסטודיו של **שירי אלקבץ**! אנו מאמינים בכוח הטרנספורמטיבי של המוזיקה והצליל כמקור לריפוי, יצירתיות וחיבור פנימי. כאן תוכלו למצוא את כל המידע על השירותים השונים שאני מציעה.</p>
-            <a href="#Contact" class="cta-button">לתיאום פגישת הכרות</a>
+        <div id="Studio" class="tab-content" style="display:none">
+            <h2>מידע נוסף על סטודיו צלילים מחברים</h2>
+            <p><strong>[כאן ניתן להוסיף תוכן ממוקד ופחות כללי על הסטודיו, כיוון שהכללי עבר למעלה.]</strong></p>
         </div>
 
         <div id="Performances" class="tab-content" style="display:none">
             <h2>הופעות</h2>
             <p><strong>[כאן מלא פרטים על הופעות, תאריכים ולינקים לרכישת כרטיסים.]</strong></p>
-            <p>מוזיקה חיה היא הלב הפועם של הסטודיו. כאן תוכלו למצוא את לוח ההופעות הקרובות שלי, שמשלבות צלילים מרפאים עם שירה מקורית.</p>
             <a href="https://example.com/tickets" target="_blank" class="cta-button">רכישת כרטיסים</a>
         </div>
         
         <div id="Workshops" class="tab-content" style="display:none">
             <h2>סדנאות</h2>
             <p><strong>[כאן מלא תוכן על הסדנאות השונות המוצעות.]</strong></p>
-            <p>סדנאות העשרה ייחודיות המשלבות תנועה, קול ומדיטציה. הסדנאות מתאימות למתחילים ולמתקדמים כאחד ומציעות כלים מעשיים לשילוב המוזיקה בחיי היומיום.</p>
             <ul>
                 <li>סדנת יסודות הצליל המרפא</li>
                 <li>שחרור רגשי דרך שירה וקול</li>
@@ -266,26 +265,22 @@
         <div id="Groups" class="tab-content" style="display:none">
             <h2>קבוצות</h2>
             <p><strong>[כאן מלא פרטים על קבוצות טיפול או קבוצות העשרה קבועות.]</strong></p>
-            <p>הכוח של ריפוי בקבוצה. ההצטרפות לקבוצות מאפשרת מרחב בטוח לשיתוף וחקירה הדדית. הקבוצות מתמקדות בנושאים ספציפיים ומתקיימות במפגשים שבועיים.</p>
         </div>
 
         <div id="Therapy" class="tab-content" style="display:none">
             <h2>תרפיה במוזיקה</h2>
             <p><strong>[כאן מלא הסבר מפורט על הטיפול במוזיקה ואיך הוא מתבצע.]</strong></p>
-            <p>טיפול אישי רגשי ויצירתי המאפשר תקשורת לא-מילולית ועיבוד רגשות דרך שימוש מותאם אישית בצליל, הקשבה ונגינה. הטיפול מתאים לכל גיל.</p>
             <a href="mailto:your_email@example.com" class="cta-button">קבעו פגישת ייעוץ</a>
         </div>
 
         <div id="BodyVoice" class="tab-content" style="display:none">
             <h2>קול הגוף</h2>
             <p><strong>[כאן מלא תוכן על שימוש בקול ככלי טיפולי, שיעורי פיתוח קול או חיבור קול-גוף.]</strong></p>
-            <p>הקול שלנו הוא כלי הריפוי החזק ביותר. דרך עבודה ממוקדת על נשימה, תהודה וצליל, נחבר את הקול אל הגוף כדי לשחרר מתחים ולהגביר את הנוכחות.</p>
         </div>
 
         <div id="Music" class="tab-content" style="display:none">
             <h2>מוזיקה</h2>
             <p><strong>[כאן מלא לינקים למוזיקה שלך, אלבומים, Spotify, YouTube.]</strong></p>
-            <p>אוסף היצירות והפרויקטים המוזיקליים שלי. הקשיבו והתחברו למסע הצלילי שלי דרך הקישורים הבאים:</p>
             <a href="https://example.com/spotify" target="_blank" class="cta-button">ל-Spotify</a>
         </div>
     </div>
@@ -310,10 +305,8 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // טען את הטאב הראשון ('Studio') אוטומטית בפתיחת הדף
-            document.querySelector('.tab-link').click();
-        });
+        
+        /* אין הפעלה אוטומטית, התוכן הכללי נשאר גלוי */
     </script>
 
 </body>
