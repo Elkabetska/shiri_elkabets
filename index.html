@@ -14,7 +14,6 @@
         <div class="profile-image-container">
             <img src="images/profile.jpg" alt="תמונת פרופיל של שירי אלקבץ" class="profile-image">
         </div>
-        
         <h1>שירי אלקבץ</h1> 
     </header>
 
@@ -29,97 +28,41 @@
     </div>
 
     <div class="tabs-container">
-        
         <div class="tabs-image-bar">
-            <a href="#" class="tab-link" onclick="openTab(event, 'Studio')">
+            <a href="studio.html" class="tab-link">
                 <img src="images/studio.jpg" alt="סטודיו צלילים מחברים" class="tab-image">
                 <span class="tab-label">סטודיו צלילים מחברים</span>
             </a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'Performances')">
+            <a href="performances.html" class="tab-link">
                 <img src="images/concerts.jpg" alt="הופעות" class="tab-image">
                 <span class="tab-label">הופעות</span>
             </a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'Workshops')">
+            <a href="workshops.html" class="tab-link">
                 <img src="images/sadna.jpg" alt="סדנאות" class="tab-image">
                 <span class="tab-label">סדנאות</span>
             </a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'Groups')">
+            <a href="groups.html" class="tab-link">
                 <img src="images/groups.jpg" alt="קבוצות" class="tab-image">
                 <span class="tab-label">קבוצות</span>
             </a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'Therapy')">
+            <a href="therapy.html" class="tab-link">
                 <img src="images/teraphy.jpg" alt="תרפיה במוזיקה" class="tab-image">
                 <span class="tab-label">תרפיה במוזיקה</span>
             </a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'BodyVoice')">
+            <a href="bodyvoice.html" class="tab-link">
                 <img src="images/kol_haguf.jpg" alt="קול הגוף" class="tab-image">
                 <span class="tab-label">קול הגוף</span>
             </a>
-            <a href="#" class="tab-link" onclick="openTab(event, 'Music')">
+            <a href="music.html" class="tab-link">
                 <img src="images/music.jpg" alt="מוזיקה" class="tab-image">
                 <span class="tab-label">מוזיקה</span>
             </a>
-        </div>
-
-        <div id="Studio" class="tab-content" style="display:none">
-            <img src="images/connecting_sounds.jpg" 
-                 alt="עיצוב מלא לסטודיו צלילים מחברים" 
-                 class="full-tab-design">
-            <a href="#" class="cta-button">יצירת קשר</a>
-        </div>
-
-        <div id="Performances" class="tab-content" style="display:none">
-            <h2>הופעות</h2>
-            <p><strong>[כאן מלא פרטים על הופעות, תאריכים ולינקים לרכישת כרטיסים.]</strong></p>
-            <a href="https://example.com/tickets" target="_blank" class="cta-button">רכישת כרטיסים</a>
-        </div>
-        
-        <div id="Workshops" class="tab-content" style="display:none">
-            <h2>סדנאות</h2>
-            <p><strong>[כאן מלא תוכן על הסדנאות השונות המוצעות.]</strong></p>
-        </div>
-        
-        <div id="Groups" class="tab-content" style="display:none">
-            <h2>קבוצות</h2>
-            <p><strong>[כאן מלא פרטים על קבוצות טיפול או קבוצות העשרה קבועות.]</strong></p>
-        </div>
-
-        <div id="Therapy" class="tab-content" style="display:none">
-            <h2>תרפיה במוזיקה</h2>
-            <p><strong>[כאן מלא הסבר מפורט על הטיפול במוזיקה ואיך הוא מתבצע.]</strong></p>
-            <a href="mailto:your_email@example.com" class="cta-button">קבעו פגישת ייעוץ</a>
-        </div>
-
-        <div id="BodyVoice" class="tab-content" style="display:none">
-            <h2>קול הגוף</h2>
-            <p><strong>[כאן מלא תוכן על שימוש בקול ככלי טיפולי, שיעורי פיתוח קול או חיבור קול-גוף.]</strong></p>
-        </div>
-
-        <div id="Music" class="tab-content" style="display:none">
-            <h2>מוזיקה</h2>
-            <p><strong>[כאן מלא לינקים למוזיקה שלך, אלבומים, Spotify, YouTube.]</strong></p>
-            <a href="https://example.com/spotify" target="_blank" class="cta-button">ל-Spotify</a>
         </div>
     </div>
     
     <footer>
         <p>&copy; 2025 שירי אלקבץ | כל הזכויות שמורות.</p>
     </footer>
-
-    <script>
-        function openTab(evt, tabName) {
-            var tabcontent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            var tablinks = document.getElementsByClassName("tab-link");
-            for (var i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
 
 </body>
 </html>

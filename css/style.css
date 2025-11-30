@@ -20,7 +20,7 @@ body {
     line-height: 1.6;
     padding: 20px;
     text-align: right; 
-    min-height: 100vh; /* וודא שהרקע הסגול ממלא את כל המסך */
+    min-height: 100vh; 
 }
 
 /* 2. כותרות וראש עמוד (Header) - רקע תמונה */
@@ -46,7 +46,7 @@ header h1 {
     margin-bottom: 0; 
 }
 
-/* עיצוב תמונת הפרופיל */
+/* עיצוב תמונת הפרופיל - נתיב יחסי: images/profile.jpg */
 .profile-image-container {
     margin-bottom: 20px;
 }
@@ -58,7 +58,7 @@ header h1 {
     border-radius: 50%; 
     border: 5px solid white; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    content: url('../images/profile.jpg'); /* נתיב יחסי מעודכן */
+    content: url('../images/profile.jpg'); 
 }
 
 /* 3. תיבת תוכן "מי אני" (שתי עמודות, קבוע בדף) */
@@ -81,13 +81,14 @@ header h1 {
     width: 250px;
 }
 
+/* נתיב יחסי: images/aboutme1.jpg */
 .about-me-image {
     width: 100%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
     border: 3px solid var(--color-accent-soft); 
-    content: url('../images/aboutme1.jpg'); /* נתיב יחסי מעודכן */
+    content: url('../images/aboutme1.jpg'); 
 }
 
 .about-me-text {
@@ -134,6 +135,7 @@ header h1 {
     padding: 5px;
 }
 
+/* קלאס חדש לטאב פעיל בעמוד נפרד */
 .tab-link.active {
     box-shadow: 0 0 0 3px var(--color-accent-deep); 
     border-radius: 8px;
@@ -163,15 +165,22 @@ header h1 {
     color: var(--color-accent-deep); 
 }
 
-/* 5. תוכן הלשונית */
-.tab-content {
+/* 5. עיצוב עמודים נפרדים (היכן שהתוכן מופיע) */
+.tab-content-page {
+    max-width: 900px;
+    margin: 30px auto 30px auto; 
+    padding: 0;
+}
+
+.content-box {
     padding: 30px;
-    border-top: none;
     background-color: var(--color-secondary-bg); 
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center; 
 }
 
-.tab-content h2 {
+.content-box h2 {
     color: var(--color-accent-deep); 
     margin-bottom: 15px;
     border-bottom: 2px solid rgba(132, 107, 60, 0.3); 
@@ -198,6 +207,7 @@ header h1 {
     margin-top: 20px;
     font-weight: 700;
     transition: background-color 0.3s ease;
+    margin: 10px;
 }
 
 .cta-button:hover {
