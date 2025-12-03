@@ -3,85 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>שירי אלקבץ - מוזיקאית יוצרת ותרפיסטית</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
+    <title>יובל לאופר - איש-פסנתר</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .social-links {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            gap: 15px; 
+            margin: 20px auto 40px auto; 
+            max-width: 100%; 
+        }
 
+        .social-link {
+            display: flex; 
+            align-items: center;
+            justify-content: space-between; 
+            
+            width: 260px; /* רוחב קבוע */
+            
+            background-color: #5D99C6; 
+            color: white; 
+            text-decoration: none; 
+            
+            padding: 10px 15px; 
+            border-radius: 50px; 
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+            
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45); 
+            border-bottom: 3px solid rgba(0, 0, 0, 0.2); 
+            transform: translateY(0);
+        }
+
+        .social-link:hover {
+            background-color: #407BA3; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            transform: translateY(-4px); 
+        }
+
+        .social-link .social-name {
+            font-size: 1.1em;
+            margin-left: 15px; /* מרווח בין הטקסט ללוגו */
+            order: 1; /* **טקסט ראשון (ימין) ב-RTL** */
+        }
+
+        .social-link img {
+            width: 30px; 
+            height: 30px;
+            border-radius: 50%;
+            transition: transform 0.2s;
+            order: 2; /* **לוגו שני (שמאל) ב-RTL** */
+            margin-left: 0; 
+            filter: none; /* ביטול filter: invert() ששיבש צבעים */
+        }
+
+        .social-link:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+    </head>
 <body>
+    <div class="container">
+        <header class="main-header">
+            <h1>יובל לאופר</h1>
+            <p><strong>איש-פסנתר</strong></p> 
+        </header>
 
-    <header>
-        <div class="profile-image-container">
-            <img src="images/profile.jpg" alt="תמונת פרופיל של שירי אלקבץ" class="profile-image">
-        </div>
-        <h1>שירי אלקבץ</h1> 
-    </header>
+        <section class="about-me-section">
+            <div class="profile-image-container">
+                <img src="images/my_profile_pic.jpg" alt="יובל לאופר">
+            </div>
+            <div class="about-me-text">
+                <h2>?מי אני</h2>
+                <p>
+                    ברוכים הבאים לאתר שלי :)
+                    אני יובל לאופר, מוזיקאי , פסנתרן, מעבד, ויוצר. 
+                    עם ניסיון רב גם על הבמה - בהרכבים שונים וגם בתיאטרון,  
+                    אני מציע מגוון רחב של שירותים:
+                    משיעורי פסנתר במסלול של ליווי שירים, הקלטות באולפן ביתי,  הורדת תפקידי קלידים להקלטות, ליווי מוזיקלי
+                    בתיאטרון פלייבק וליווי זמרים וזמרות בהופעות והקלטות.
 
-    <div class="about-me-box">
-        <div class="about-me-image-container">
-            <img src="images/aboutme1.jpg" alt="תמונה נוספת של שירי אלקבץ" class="about-me-image">
+                    אני מאמין שדרך המוזיקה אנחנו יכולים לבטא את עצמנו בצורה הכי אמיתית, ואני כאן כדי ללוות אתכם במסע המוזיקלי שלכם.
+                </p>
+                <p>
+                    אז בין אם אתם מחפשים ללמוד לנגן, להקליט את הרעיונות שלכם, לתרגם שיר אהוב, להקליט פסנתר לשיר שלכם ועוד  - 
+                    מוזמנות ומוזמנים לפנות אלי ואשמח לצאת לדרך יחד
+                </p>
+            </div>
+        </section>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/yuval.laufer" target="_blank" class="social-link" title="פייסבוק">
+                <span class="social-name">פייסבוק:</span>
+                <img src="images/facebooklogo.png" alt="לוגו פייסבוק">
+            </a>
+            <a href="https://www.instagram.com/laufer.yuval/" target="_blank" class="social-link" title="אינסטגרם">
+                <span class="social-name">אינסטגרם:</span>
+                <img src="images/instushlogo.png" alt="לוגו אינסטגרם">
+            </a>
+            <a href="https://www.tiktok.com/@yuvallaufer235" target="_blank" class="social-link" title="טיקטוק">
+                <span class="social-name">טיקטוק:</span>
+                <img src="images/tiktoklogo.png" alt="לוגו טיקטוק">
+            </a>
         </div>
-        <div class="about-me-text">
-            <h2>מי אני</h2>
-            <p>אני **שירי אלקבץ**, מוזיקאית יוצרת ותרפיסטית במוזיקה. זה המקום לעוד טקסט על עצמך, על הגישה שלך ועל מה שאת מביאה איתך לכל פרויקט, טיפול או במה.</p>
-            <p style="margin-top: 10px;">העולם שלי הוא שילוב של **צליל, רגש וחיבור אנושי**, ואני מאמינה בכוחה של המוזיקה לרפא, להניע ולחבר אנשים.</p>
-        </div>
+        <section class="navigation-grid">
+            <div class="nav-item">
+                <a href="lessons.html">
+                    <img src="images/lessons.jpg" alt="שיעורי פסנתר">
+                    <p>שיעורי פסנתר</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="recordings.html">
+                    <img src="images/recordings.jpg" alt="אולפן הקלטות ביתי">
+                    <p>אולפן הקלטות ביתי</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="translate.html">
+                    <img src="images/translate.jpg" alt="תרגום שירים">
+                    <p>תרגום שירים</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="vocals.html">
+                    <img src="images/vocals.jpg" alt="עיבודים קוליים">
+                    <p>עיבודים קוליים</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="playback.html">
+                    <img src="images/playback.jpg" alt="ליווי מוזיקלי בתיאטרון פלייבק">
+                    <p>ליווי מוזיקלי בתיאטרון פלייבק</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="accompanying.html">
+                    <img src="images/accompanying.jpg" alt="ליווי זמרות וזמרים">
+                    <p>ליווי זמרות וזמרים</p>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="mymusic.html">
+                    <img src="images/mymusic.jpg" alt="המוזיקה שלי">
+                    <p>המוזיקה שלי</p>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 יובל לאופר. כל הזכויות שמורות.</p>
+        </footer>
     </div>
-    
-    <div class="social-buttons-container">
-        <a href="https://www.facebook.com/shiri.elkabets.1" 
-           target="_blank" 
-           class="cta-button" 
-           style="background-color: var(--color-social);">
-            <img src="images/facebooklogo.png" alt="לוגו פייסבוק">
-            עקבו בפייסבוק
-        </a>
-        
-        <a href="https://www.instagram.com/shiri_elkabetska/" 
-           target="_blank" 
-           class="cta-button" 
-           style="background-color: var(--color-social);">
-            <img src="images/instagramlogo.png" alt="לוגו אינסטגרם">
-            עקבו באינסטגרם
-        </a>
-    </div>
-
-    <div class="tabs-container">
-        <div class="tabs-image-bar">
-            <a href="studio.html" class="tab-link">
-                <img src="images/studio.jpg" alt="סטודיו צלילים מחברים" class="tab-image">
-                <span class="tab-label">סטודיו צלילים מחברים</span>
-            </a>
-            <a href="performances.html" class="tab-link">
-                <img src="images/concerts.jpg" alt="הופעות" class="tab-image">
-                <span class="tab-label">הופעות</span>
-            </a>
-            <a href="workshops.html" class="tab-link">
-                <img src="images/sadna.jpg" alt="סדנאות" class="tab-image">
-                <span class="tab-label">סדנאות</span>
-            </a>
-            <a href="groups.html" class="tab-link">
-                <img src="images/groups.jpg" alt="קבוצות" class="tab-image">
-                <span class="tab-label">קבוצות</span>
-            </a>
-            <a href="therapy.html" class="tab-link">
-                <img src="images/teraphy.jpg" alt="תרפיה במוזיקה" class="tab-image">
-                <span class="tab-label">תרפיה במוזיקה</span>
-            </a>
-            <a href="bodyvoice.html" class="tab-link">
-                <img src="images/kol_haguf.jpg" alt="קול הגוף" class="tab-image">
-                <span class="tab-label">קול הגוף</span>
-            </a>
-            <a href="music.html" class="tab-link">
-                <img src="images/music.jpg" alt="מוזיקה" class="tab-image">
-                <span class="tab-label">מוזיקה</span>
-            </a>
-        </div>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 שירי אלקבץ | כל הזכויות שמורות.</p>
-    </footer>
-
 </body>
 </html>
