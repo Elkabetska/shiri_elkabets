@@ -30,7 +30,6 @@ header {
     padding: 40px 0 20px 0;
     margin-bottom: 20px;
     
-    /* הנתיב עודכן כדי להתאים לקובץ בתיקייה הראשית */
     background-image: url('images/background.jpg'); 
     background-size: cover;
     background-position: center;
@@ -138,7 +137,7 @@ header h1 {
 
 .tab-link.active {
     box-shadow: 0 0 0 3px var(--color-accent-deep); 
-    border-radius: 8px;
+    border-radius: 10px; /* שמירה על פינות מלבניות לטאב עצמו */
     background-color: var(--color-secondary-bg); 
 }
 
@@ -229,7 +228,7 @@ header h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 6. עיצוב כפתורים (CTA & Social) */
+/* 6. עיצוב כפתורים (CTA & Social) - הצורה האליפטית והמובלטת! */
 .cta-button {
     display: inline-flex; 
     align-items: center; 
@@ -239,27 +238,31 @@ header h1 {
     color: white; 
     padding: 12px 25px;
     text-decoration: none;
-    border-radius: 5px;
+    
+    /* NEW: הפינות האליפטיות וההצללה המובלטת */
+    border-radius: 50px; /* מעוגל מאוד לאליפטי */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* הצללה עמוקה יותר למראה מובלט */
+    
     font-weight: 700;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease;
     margin: 10px 5px; 
     flex-shrink: 0;
+    /* NEW: אפקט לחיצה */
+    transform: translateY(0);
 }
 
 .cta-button:hover {
     background-color: var(--color-accent-soft); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* קלאס מיוחד לבלוק שמכיל את כפתורי יצירת הקשר (ווצאפ + מייל) */
-.contact-buttons-with-logos {
-    display: flex; 
-    justify-content: center; 
-    gap: 20px; 
-    margin-top: 10px;
-    margin-bottom: 20px;
+/* אפקט לחיצה קצר */
+.cta-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* עיצוב הלוגואים בתוך הכפתורים */
+/* עיצוב מיוחד לכפתורי הקשר (ווצאפ + מייל) */
 .contact-buttons-with-logos .cta-button img {
     height: 24px; 
     margin-left: 10px; 
@@ -268,7 +271,7 @@ header h1 {
 /* NEW: עיצוב אזור המדיה החברתית */
 .social-buttons-container {
     max-width: 900px;
-    margin: 20px auto 40px auto; /* הוספת מרווח גדול אחרי הכפתורים */
+    margin: 20px auto 40px auto; 
     padding: 15px 0;
     border-top: 1px solid var(--color-accent-soft);
     border-bottom: 1px solid var(--color-accent-soft);
@@ -276,10 +279,9 @@ header h1 {
 }
 
 .social-buttons-container .cta-button {
-    background-color: var(--color-social); /* סגול כהה */
+    background-color: var(--color-social); 
     min-width: 180px; 
     margin: 10px 5px;
-    /* עיצוב לוגו מדיה חברתית */
 }
 
 .social-buttons-container .cta-button img {
