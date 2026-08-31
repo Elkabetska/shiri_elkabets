@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
     <script>
-        // פונקציה שמחזירה לדף הקודם (דף האינדקס של הקבוצות)
         function goBack() {
             history.back();
         }
@@ -47,8 +46,8 @@
     <div class="tab-content-page">
         
         <div style="text-align: right; max-width: 900px; margin: 0 auto;">
-            <a href="index.html" class="cta-button">חזרה לעמוד הבית</a>
-            <button onclick="goBack()" class="cta-button" style="background-color: var(--color-accent-soft); margin-left: 20px;">← חזרה לדף הקבוצות</button>
+            <div class="back-button-container" style="display: inline-block;"></div>
+            <button onclick="goBack()" class="cta-button" style="background-color: var(--color-accent-soft); color: var(--color-text-dark); margin-right: 10px;">← חזרה לדף הקבוצות</button>
         </div>
         
         <div class="content-box" style="margin-top: 20px;">
@@ -87,5 +86,6 @@
         <p>&copy; 2025 שירי אלקבץ | כל הזכויות שמורות.</p>
     </footer>
 
+    <script src="nav.js"></script>
 </body>
 </html>

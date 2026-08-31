@@ -278,10 +278,19 @@ header h1 {
     text-align: center;
 }
 
+.social-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
 .social-buttons-container .cta-button {
     background-color: var(--color-social); 
-    min-width: 180px; 
-    margin: 10px 5px;
+    width: 260px;
+    max-width: 90%;
+    margin: 0;
+    justify-content: center;
 }
 
 .social-buttons-container .cta-button img {
