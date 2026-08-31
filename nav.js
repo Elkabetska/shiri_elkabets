@@ -1,10 +1,10 @@
 // קובץ ניווט מרכזי - יוצר אוטומטית את הלשוניות העליונות, אזור המדיה החברתית וכפתורי החזרה בדפים
 document.addEventListener("DOMContentLoaded", function() {
-    // 0. הגדרת מערך הלשוניות (הטאבים) המרכזי - כל שינוי בתמונה או בטקסט יעשה כאן בלבד
+    // 0. הגדרת מערך הלשוניות (הטאבים) המרכזי
     const tabsData = [
         {
             href: "studio.html",
-            img: "images/studio.jpg",
+            img: "images/shiri_sitting.jpeg",
             alt: "סטודיו צלילים מחברים",
             label: "סטודיו צלילים מחברים",
             activeKey: "studio.html"
@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentPath = window.location.pathname.split("/").pop() || "index.html";
         
         tabsBar.innerHTML = tabsData.map(tab => {
-            // בדיקה האם הטאב הנוכחי הוא הפעיל
             const isActive = currentPath === tab.activeKey ? "active" : "";
-            // תיקון ספציפי לתמונת הסטודיו בעמוד הסטודיו במידת הצורך, או שימוש בתמונה הראשית
             let imgSrc = tab.img;
             if (tab.activeKey === "studio.html" && currentPath === "studio.html") {
                 imgSrc = "images/connecting_sounds.jpg";
@@ -74,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
     }
 
-    // 2. הוספת כפתור חזרה לדף הבית (עבור עמודים שהם לא דף הבית)
+    // 2. הוספת כפתור חזרה לדף הבית
     const backButtonContainer = document.querySelector(".back-button-container");
     if (backButtonContainer && !window.location.pathname.endsWith("index.html") && window.location.pathname !== "/") {
         backButtonContainer.innerHTML = `
