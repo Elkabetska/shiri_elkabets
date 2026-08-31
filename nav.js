@@ -4,9 +4,7 @@ const tabsData = [
     { name: "בית", url: "index.html", key: "home" },
     { name: "מוזיקה", url: "music.html", key: "music" },
     { name: "קבוצות", url: "groups.html", key: "groups" },
-    { name: "אנסמבל מענה קולי", url: "ensemble.html", key: "ensemble", image: "images/ansamble.jpeg" },
-    { name: "אודות", url: "about.html", key: "about" },
-    { name: "צור קשר", url: "contact.html", key: "contact" }
+    { name: "אנסמבל מענה קולי", url: "ensemble.html", key: "ensemble", image: "images/ansamble.jpeg" }
 ];
 
 // פונקציה לייצור סרגל הלשוניות באופן דינמי
@@ -30,8 +28,11 @@ function renderTabs(activeKey) {
     tabsContainer.innerHTML = html;
 }
 
-// פונקציה לייצור כפתור חזרה במידת הצורך
+// פונקציה לייצור כפתור חזרה במידת הצורך (רק בעמודים פנימיים ולא בדף הבית)
 function renderBackButton() {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    if (currentPage === "index.html" || currentPage === "") return;
+
     const backContainer = document.querySelector(".back-button-container");
     if (!backContainer) return;
     
