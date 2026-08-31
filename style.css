@@ -391,18 +391,30 @@ footer {
         height: 150px;
     }
 
-    .social-buttons-container .cta-button,
-    .contact-buttons-with-logos .cta-button {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px 15px;
-        font-size: 0.95rem;
-    }
-
+    /* איפוק ואיזון מוחלט לכפתורי יצירת הקשר והוואטסאפ במובייל */
     .contact-buttons-with-logos {
         display: flex;
         flex-direction: column;
         gap: 10px;
         align-items: center;
+        width: 100%;
+    }
+
+    .contact-buttons-with-logos .cta-button {
+        width: 85% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        padding: 10px 15px !important;
+        font-size: 0.95rem !important;
+        box-sizing: border-box;
+    }
+
+    .social-buttons-container .cta-button {
+        width: 85% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+        padding: 10px 15px !important;
+        font-size: 0.95rem !important;
+        box-sizing: border-box;
     }
 }
