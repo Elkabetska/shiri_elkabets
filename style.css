@@ -137,7 +137,7 @@ header h1 {
 
 .tab-link.active {
     box-shadow: 0 0 0 3px var(--color-accent-deep); 
-    border-radius: 10px; /* שמירה על פינות מלבניות לטאב עצמו */
+    border-radius: 10px; 
     background-color: var(--color-secondary-bg); 
 }
 
@@ -228,25 +228,21 @@ header h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* 6. עיצוב כפתורים (CTA & Social) - הצורה האליפטית והמובלטת! */
+/* 6. עיצוב כפתורים (CTA & Social) */
 .cta-button {
     display: inline-flex; 
     align-items: center; 
     justify-content: center; 
-    
     background-color: var(--color-accent-deep); 
     color: white; 
     padding: 12px 25px;
     text-decoration: none;
-    
     border-radius: 50px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-    
     font-weight: 700;
     transition: all 0.2s ease;
     margin: 10px 5px; 
     flex-shrink: 0;
-    transform: translateY(0);
 }
 
 .cta-button:hover {
@@ -254,13 +250,9 @@ header h1 {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
 }
 
-.cta-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
 .contact-buttons-with-logos .cta-button img {
     height: 24px; 
+    width: auto;
     margin-left: 10px; 
 }
 
@@ -287,6 +279,7 @@ header h1 {
 
 .social-buttons-container .cta-button img {
     height: 20px; 
+    width: auto;
     margin-left: 10px; 
 }
 
@@ -300,7 +293,6 @@ footer {
 
 /* 7. רספונסיביות מלאה ומדויקת לסלולר */
 @media (max-width: 768px) {
-    /* תיקון ותמיכה מלאה בתצוגת תוכן ותמונות (כמו קול הגוף) במסכים ניידים */
     .tab-content-page, .content-box, .full-tab-design {
         width: 100% !important;
         max-width: 100% !important;
@@ -391,22 +383,35 @@ footer {
         height: 150px;
     }
 
-    /* איפוק ואיזון מוחלט לכפתורי יצירת הקשר והוואטסאפ במובייל */
+    /* תיקון קריטי: הגבלת רוחב הכפתור וגודל האייקון בתוכו במובייל */
     .contact-buttons-with-logos {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         align-items: center;
         width: 100%;
     }
 
     .contact-buttons-with-logos .cta-button {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         width: 85% !important;
         max-width: 280px !important;
         margin: 0 auto !important;
         padding: 10px 15px !important;
         font-size: 0.95rem !important;
-        box-sizing: border-box;
+        box-sizing: border-box !important;
+    }
+
+    /* עצירה מוחלטת של התמונות הענקיות בתוך כפתורי יצירת הקשר במובייל */
+    .contact-buttons-with-logos .cta-button img {
+        height: 20px !important;
+        width: auto !important;
+        max-height: 20px !important;
+        margin-left: 8px !important;
+        margin-right: 0 !important;
+        object-fit: contain !important;
     }
 
     .social-buttons-container .cta-button {
@@ -415,6 +420,14 @@ footer {
         margin: 0 auto !important;
         padding: 10px 15px !important;
         font-size: 0.95rem !important;
-        box-sizing: border-box;
+        box-sizing: border-box !important;
+    }
+
+    .social-buttons-container .cta-button img {
+        height: 18px !important;
+        width: auto !important;
+        max-height: 18px !important;
+        margin-left: 8px !important;
+        object-fit: contain !important;
     }
 }
