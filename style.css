@@ -300,6 +300,16 @@ footer {
 
 /* 7. רספונסיביות מלאה ומדויקת לסלולר */
 @media (max-width: 768px) {
+    /* תיקון ותמיכה מלאה בתצוגת תוכן ותמונות (כמו קול הגוף) במסכים ניידים */
+    .tab-content-page, .content-box, .full-tab-design {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+    .content-box img, .full-tab-design {
+        height: auto !important;
+        object-fit: contain !important;
+    }
     body {
         padding: 10px;
     }
