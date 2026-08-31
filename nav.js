@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const socialContainer = document.querySelector(".social-buttons-container");
     if (socialContainer) {
         socialContainer.innerHTML = `
-            <a href="https://open.spotify.com/artist/5GxEhBJJmhGECHQvsh9LRz?si=5T_ZVxBCQxKdX3BoawZUxA" target="_blank" class="cta-button" style="background-color: #1DB954;">
+            <a href="https://open.spotify.com/artist/5GxEhBJJmhGECHQvsh9LRz?si=U_KRYTywQc6W4NSu4doMiw&utm_source=copy-link" target="_blank" class="cta-button" style="background-color: #1DB954;">
                 <span style="margin-left: 10px; font-size: 1.2em;">🎧</span> ספוטיפיי
             </a>
             <a href="https://www.facebook.com/shiri.elkabets.1" target="_blank" class="cta-button" style="background-color: #3b5998;">
