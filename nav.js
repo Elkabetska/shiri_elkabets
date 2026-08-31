@@ -1,5 +1,60 @@
-// קובץ ניווט מרכזי - יוצר אוטומטית את אזור המדיה החברתית וכפתורי החזרה בדפים
+// קובץ ניווט מרכזי - יוצר אוטומטית את הלשוניות העליונות, אזור המדיה החברתית וכפתורי החזרה בדפים
 document.addEventListener("DOMContentLoaded", function() {
+    // 0. הגדרת מערך הלשוניות (הטאבים) המרכזי - כל שינוי בתמונה או בטקסט יעשה כאן בלבד
+    const tabsData = [
+        {
+            href: "studio.html",
+            img: "images/studio.jpg",
+            alt: "סטודיו צלילים מחברים",
+            label: "סטודיו צלילים מחברים",
+            activeKey: "studio.html"
+        },
+        {
+            href: "groups.html",
+            img: "images/shiri_keyboard.jpeg",
+            alt: "קבוצות",
+            label: "קבוצות",
+            activeKey: "groups.html"
+        },
+        {
+            href: "bodyvoice.html",
+            img: "images/shiri_tree.jpeg",
+            alt: "קול הגוף",
+            label: "קול הגוף",
+            activeKey: "bodyvoice.html"
+        },
+        {
+            href: "music.html",
+            img: "images/mymusic.jpg",
+            alt: "מוזיקה",
+            label: "מוזיקה",
+            activeKey: "music.html"
+        }
+    ];
+
+    // הוספת הטאבים אוטומטית לכל מקום שבו קיים אלמנט .tabs-image-bar
+    const tabsBar = document.querySelector(".tabs-image-bar");
+    if (tabsBar) {
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
+        
+        tabsBar.innerHTML = tabsData.map(tab => {
+            // בדיקה האם הטאב הנוכחי הוא הפעיל
+            const isActive = currentPath === tab.activeKey ? "active" : "";
+            // תיקון ספציפי לתמונת הסטודיו בעמוד הסטודיו במידת הצורך, או שימוש בתמונה הראשית
+            let imgSrc = tab.img;
+            if (tab.activeKey === "studio.html" && currentPath === "studio.html") {
+                imgSrc = "images/connecting_sounds.jpg";
+            }
+
+            return `
+                <a href="${tab.href}" class="tab-link ${isActive}">
+                    <img src="${imgSrc}" alt="${tab.alt}" class="tab-image">
+                    <span class="tab-label">${tab.label}</span>
+                </a>
+            `;
+        }).join("");
+    }
+
     // 1. הוספת כפתורי סושיאל בצורה אנכית ואסתטית
     const socialContainer = document.querySelector(".social-buttons-container");
     if (socialContainer) {
