@@ -1,9 +1,12 @@
 // קובץ ניווט מרכזי - יוצר אוטומטית את אזור המדיה החברתית וכפתורי החזרה בדפים
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. הוספת כפתורי סושיאל (פייסבוק, אינסטגרם, טיקטוק) בצורה אנכית ואסתטית
+    // 1. הוספת כפתורי סושיאל בצורה אנכית ואסתטית
     const socialContainer = document.querySelector(".social-buttons-container");
     if (socialContainer) {
         socialContainer.innerHTML = `
+            <a href="https://open.spotify.com/artist/5GxEhBJJmhGECHQvsh9LRz?si=5T_ZVxBCQxKdX3BoawZUxA" target="_blank" class="cta-button" style="background-color: #1DB954;">
+                <span style="margin-left: 10px; font-size: 1.2em;">🎧</span> ספוטיפיי
+            </a>
             <a href="https://www.facebook.com/elkabetska" target="_blank" class="cta-button" style="background-color: #3b5998;">
                 <img src="images/facebooklogo.png" alt="Facebook"> פייסבוק
             </a>
