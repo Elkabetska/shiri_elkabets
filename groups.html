@@ -17,9 +17,25 @@
         <h1>שירי אלקבץ</h1> 
     </header>
 
-    <!-- אזור הלשוניות מתמלא אוטומטית דרך nav.js -->
     <div class="tabs-container">
-        <div class="tabs-image-bar"></div>
+        <div class="tabs-image-bar">
+            <a href="studio.html" class="tab-link">
+                <img src="images/studio.jpg" alt="סטודיו צלילים מחברים" class="tab-image">
+                <span class="tab-label">סטודיו צלילים מחברים</span>
+            </a>
+            <a href="groups.html" class="tab-link active">
+                <img src="images/groups.jpg" alt="קבוצות" class="tab-image">
+                <span class="tab-label">קבוצות</span>
+            </a>
+            <a href="bodyvoice.html" class="tab-link">
+                <img src="images/bodyvoice.jpg" alt="קול הגוף" class="tab-image">
+                <span class="tab-label">קול הגוף</span>
+            </a>
+            <a href="music.html" class="tab-link">
+                <img src="images/mymusic.jpg" alt="מוזיקה" class="tab-image">
+                <span class="tab-label">מוזיקה</span>
+            </a>
+        </div>
     </div>
     
     <div class="tab-content-page">
@@ -29,18 +45,45 @@
         </div>
         
         <div class="content-box">
-            
-            <h2>הקבוצות שלי</h2>
-            
-            <div style="text-align: right; margin: 20px 0; line-height: 1.6;">
-                <p style="margin-bottom: 15px; font-size: 1.1rem;">
-                    כאן תוכלו למצוא את מגוון הקבוצות והסדנאות שאני מציעה ומעבירה.
-                </p>
-            </div>
+            <h2>קבוצות וסדנאות קבועות</h2>
+            <p style="margin-bottom: 30px;">לחצו על הקבוצה לקבלת פלייר ופרטים מלאים.</p>
 
-            <!-- רשת הקבוצות (ללא אנסמבל מענה קולי שהועבר לעמוד עצמאי) -->
             <div class="groups-grid">
-                <!-- כאן יופיעו שאר הקבוצות שלך, אם קיימות -->
+                
+                <a href="group-guitar.html" class="group-card">
+                    <img src="images/groups.jpg" alt="קבוצת ליווי בגיטרה" class="group-image">
+                    <h3>ליווי בגיטרה</h3>
+                    <p>קבוצת מתחילים ומתקדמים</p>
+                </a>
+
+                <a href="group-kids.html" class="group-card">
+                    <img src="images/groups.jpg" alt="מיומנויות חברתיות לילדים" class="group-image">
+                    <h3>מיומנויות חברתיות לילדים</h3>
+                    <p>דרך מוזיקה וצליל</p>
+                </a>
+                
+            </div>
+            
+            <p style="margin-top: 30px; border-top: 1px solid var(--color-accent-soft); padding-top: 20px;">
+                לבירורים כלליים על הקבוצות:
+            </p>
+            
+            <div class="contact-buttons-with-logos">
+                
+                <a href="https://wa.me/972542479477?text=הי.+ברצוני+לקבל+פרטים+לגבי+קבוצה+שאת+מנחה" 
+                   target="_blank" 
+                   class="cta-button" 
+                   style="background-color: #25D366;">
+                    <img src="images/whatsapplogo.png" alt="לוגו וואטסאפ">
+                    יצירת קשר בווצאפ
+                </a>
+                
+                <a href="mailto:elkabetska@gmail.com?subject=בירור לגבי הצטרפות לקבוצות" 
+                   class="cta-button" 
+                   style="background-color: var(--color-accent-deep);">
+                    <img src="images/maillogo.png" alt="לוגו מייל">
+                    יצירת קשר למייל
+                </a>
             </div>
             
         </div>
