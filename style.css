@@ -239,15 +239,13 @@ header h1 {
     padding: 12px 25px;
     text-decoration: none;
     
-    /* NEW: הפינות האליפטיות וההצללה המובלטת */
-    border-radius: 50px; /* מעוגל מאוד לאליפטי */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* הצללה עמוקה יותר למראה מובלט */
+    border-radius: 50px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
     
     font-weight: 700;
     transition: all 0.2s ease;
     margin: 10px 5px; 
     flex-shrink: 0;
-    /* NEW: אפקט לחיצה */
     transform: translateY(0);
 }
 
@@ -256,19 +254,16 @@ header h1 {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* אפקט לחיצה קצר */
 .cta-button:active {
     transform: translateY(2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* עיצוב מיוחד לכפתורי הקשר (ווצאפ + מייל) */
 .contact-buttons-with-logos .cta-button img {
     height: 24px; 
     margin-left: 10px; 
 }
 
-/* NEW: עיצוב אזור המדיה החברתית */
 .social-buttons-container {
     max-width: 900px;
     margin: 20px auto 40px auto; 
@@ -276,9 +271,6 @@ header h1 {
     border-top: 1px solid var(--color-accent-soft);
     border-bottom: 1px solid var(--color-accent-soft);
     text-align: center;
-}
-
-.social-buttons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -298,7 +290,6 @@ header h1 {
     margin-left: 10px; 
 }
 
-
 footer {
     text-align: center;
     margin-top: 30px;
@@ -307,35 +298,101 @@ footer {
     color: var(--color-text-dark);
 }
 
-/* 7. רספונסיביות */
-@media (max-width: 700px) {
+/* 7. רספונסיביות מלאה ומדויקת לסלולר */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 25px 10px 15px 10px;
+        margin-bottom: 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .profile-image {
+        width: 110px;
+        height: 110px;
+        border-width: 3px;
+    }
+
     .about-me-box {
         flex-direction: column; 
         text-align: center;
+        padding: 20px 15px;
+        gap: 15px;
     }
+
     .about-me-image-container {
-        width: 100%;
-        max-width: 300px;
+        width: 180px;
+        margin: 0 auto;
     }
+
+    .about-me-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .tabs-image-bar {
+        gap: 6px;
+        padding: 8px 4px;
+        justify-content: center;
+    }
+
+    .tab-link {
+        width: 75px;
+        padding: 3px;
+    }
+
+    .tab-image {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
+
+    .tab-label {
+        font-size: 0.7rem;
+        margin-top: 3px;
+        line-height: 1.1;
+    }
+
+    .content-box {
+        padding: 20px 15px;
+    }
+
+    .content-box h2 {
+        font-size: 1.4rem;
+    }
+
+    .groups-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .group-card {
+        padding: 12px;
+    }
+
+    .group-image {
+        height: 150px;
+    }
+
     .social-buttons-container .cta-button,
     .contact-buttons-with-logos .cta-button {
-        width: 90%; 
-        display: flex;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 15px;
+        font-size: 0.95rem;
     }
+
     .contact-buttons-with-logos {
+        display: flex;
         flex-direction: column;
-        gap: 5px;
-    }
-}
-@media (max-width: 600px) {
-    .tabs-image-bar {
-        justify-content: space-around;
-    }
-    .tab-link {
-        width: 30%; 
-    }
-    .tab-image {
-        width: 60px;
-        height: 60px;
+        gap: 10px;
+        align-items: center;
     }
 }
