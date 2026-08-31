@@ -164,6 +164,16 @@ header h1 {
     color: var(--color-accent-deep); 
 }
 
+/* תמיכה בלשוניות טקסטואליות שאין להן תמונה בסרגל העליון */
+.tab-link:not(:has(.tab-image)) {
+    justify-content: center;
+    min-height: 60px;
+}
+.tab-link:not(:has(.tab-image)) .tab-label {
+    font-size: 0.95rem;
+    margin-top: 0;
+}
+
 /* 5. עיצוב עמודים נפרדים ו Grid קבוצות */
 .tab-content-page {
     max-width: 900px;

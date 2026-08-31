@@ -17,11 +17,13 @@ function renderTabs(activeKey) {
     let html = '<div class="tabs-image-bar">';
     tabsData.forEach(tab => {
         const isActive = tab.key === activeKey ? "active" : "";
-        html += `<a href="${tab.url}" class="tab-item ${isActive}">`;
+        html += `<a href="${tab.url}" class="tab-link ${isActive}">`;
+        
+        // תמיכה בהצגת תמונה קטנה בלשונית (אם קיימת) ובטקסט מתחתיה
         if (tab.image) {
-            html += `<img src="${tab.image}" alt="${tab.name}" class="tab-thumb">`;
+            html += `<img src="${tab.image}" alt="${tab.name}" class="tab-image">`;
         }
-        html += `<span>${tab.name}</span></a>`;
+        html += `<span class="tab-label">${tab.name}</span></a>`;
     });
     html += '</div>';
     
